@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap');
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2 {
+  font-weight: inherit;
+}
+
+.page-header {
+  background-color: #f74c55;
+  font-size: 21px;
+  min-height: 496px;
+  overflow: hidden;   /*для устранения "выпадания" margin потомков*/
+}
+
+.logo {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 67px;
+  position: absolute;
+}
+
+.main-menu {
+  text-transform: uppercase;
+  margin-top: 33px;
+}
+
+.main-menu ul {
+  list-style: none;
+  text-align: right;
+  margin-right: 35px;
+}
+
+.main-menu li {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.header-block {
+  margin-left: 45%;
+}
+
+.header-block h1 {
+  font-size: 53px;
+  margin-top: 20%;
+}
+
+.header-block .button {
+  margin-top: 25px;
+}
+
+.header-block a, .promo a {
+  font-size: 32px;
+  font-weight: normal;
+  border: 2px solid white;
+  border-radius: 6px;
+  padding: 0 25px;
+}
+
+.main-info {
+  color: black;
+  min-height: 448px;
+}
+
+.main-info h2 {
+  font-size: 40px;
+  margin: 87px 64px auto 92px;
+}
+
+.main-info p {
+  font-size: 19px;
+  margin: 32px auto auto 92px;
+}
+
+.features {
+  min-height: 304px;
+}
+
+.features article {
+  display: inline-block;
+  width: 33.33%;
+  padding: 6.5% 3%;
+}
+
+.features h3 {
+  font-size: 29px;
+  font-weight: normal;
+}
+.features p {
+  font-size: 19px;
+  margin-top: 26px;
+  margin-bottom: 15px;
+}
+
+.features a {
+  font-size: 45px;
+  font-weight: 900;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.feature1 {
+  background-color: #404040;
+}
+
+.feature2 {
+  background-color: #f74c55;
+}
+
+.feature3 {
+  background-color: #2d5f3b;
+}
+
+.promo {
+  background-color: #1e090a;
+  background-image: url("img/promo-bg.png");
+  background-size: 100%;
+  text-align: center;
+  min-height: 673px;
+  line-height: 673px; /*для вертикального выравнивания содержимого*/
+}
+
+.promo h2 {
+  font-size: 56px;
+}
+
+.promo strong {
+  font-weight: bold;
+}
+
+.page-footer {
+  font-size: 21px;
+  color: black;
+  text-align: center;
+  min-height: 79px;
+  line-height: 79px; /*для вертикального выравнивания содержимого*/
+}
+
+.promo .container, .page-footer p { /*для вертикального выравнивания*/
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+}
