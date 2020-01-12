@@ -29,7 +29,7 @@ h1, h2 {
 .page-header {
   background-color: #f74c55;
   font-size: 21px;
-  min-height: 496px;
+  height: 496px;
   overflow: hidden;   /*для устранения "выпадания" margin потомков*/
 }
 
@@ -88,23 +88,41 @@ h1, h2 {
 
 .main-info p {
   font-size: 19px;
-  margin: 32px auto auto 92px;
+  margin-top: 32px;
+  margin-left: 92px;
+}
+
+.main-img {
+  background-image: url("img/main-img.svg");
+  height: 35px;
+  margin-top: 60px;
+  margin-left: 95px;
 }
 
 .features {
   min-height: 304px;
-}
+  background: linear-gradient(to right, #404040 50%, #2d5f3b 50%);}
 
 .features article {
   display: inline-block;
   width: 33.33%;
-  padding: 6.5% 3%;
+  padding: 4% 3% 3% 3%;
 }
 
 .features h3 {
   font-size: 29px;
   font-weight: normal;
 }
+
+.features h3::before {
+  margin-right: 15px;
+  padding-top: 10px;
+  content: "";
+  height: 36px;
+  width: 39px;
+  float: left;
+}
+
 .features p {
   font-size: 19px;
   margin-top: 26px;
@@ -116,10 +134,24 @@ h1, h2 {
   font-weight: 900;
   background-color: black;
   opacity: 0.5;
+  margin-left: 80%;
+  padding: 0 15px;
 }
 
 .feature1 {
   background-color: #404040;
+}
+
+.feature1 h3::before {
+  background: url("img/statistic-up.png") 0px 3px no-repeat;
+}
+
+.feature2 h3::before {
+  background: url("img/ipad.png") no-repeat;
+}
+
+.feature3 h3::before {
+  background: url("img/upload.png") 0px 7px no-repeat;
 }
 
 .feature2 {
@@ -133,14 +165,14 @@ h1, h2 {
 .promo {
   background-color: #1e090a;
   background-image: url("img/promo-bg.png");
-  background-size: 100%;
   text-align: center;
-  min-height: 673px;
+  height: 673px;
   line-height: 673px; /*для вертикального выравнивания содержимого*/
 }
 
 .promo h2 {
   font-size: 56px;
+  margin-bottom: 53px;
 }
 
 .promo strong {
@@ -151,8 +183,12 @@ h1, h2 {
   font-size: 21px;
   color: black;
   text-align: center;
-  min-height: 79px;
+  height: 79px;
   line-height: 79px; /*для вертикального выравнивания содержимого*/
+  background-image: url("img/main-img.svg");
+  background-repeat: repeat-x;
+  background-size: auto 9px;
+
 }
 
 .promo .container, .page-footer p { /*для вертикального выравнивания*/
