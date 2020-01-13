@@ -146,15 +146,15 @@ h1, h2 {
 }
 
 .feature1 h3::before {
-  background: url("img/statistic-up.png") 0px 3px no-repeat;
+  background: url("img/statistic-up.svg") no-repeat;
 }
 
 .feature2 h3::before {
-  background: url("img/ipad.png") no-repeat;
+  background: url("img/ipad.svg") no-repeat;
 }
 
 .feature3 h3::before {
-  background: url("img/upload.png") 0px 7px no-repeat;
+  background: url("img/upload.svg") 0px 7px no-repeat;
 }
 
 .feature2 {
