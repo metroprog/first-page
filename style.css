@@ -32,13 +32,16 @@ h1, h2 {
   height: 496px;
   overflow: hidden;   /*для устранения "выпадания" margin потомков*/
   background-image: url("img/ellipse.svg");
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 35%;
+  background-size: 175%;
 }
 
 .logo {
   font-family: 'Permanent Marker', sans-serif;
   font-size: 67px;
   position: absolute;
+  top: -10px;
 }
 
 .main-menu {
@@ -94,12 +97,14 @@ h1, h2 {
   margin-left: 92px;
 }
 
-.color {
+.main-info p::after {
+  content: '';
+  display: block;
   background-image: url("img/color.svg");
   background-repeat: no-repeat;
   height: 32px;
   margin-top: 60px;
-  margin-left: 95px;
+  margin-left: 3px;
 }
 
 .features {
@@ -168,6 +173,9 @@ h1, h2 {
 .promo {
   background-color: #1e090a;
   background-image: url("img/promo-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% auto;
   text-align: center;
   height: 673px;
   line-height: 673px; /*для вертикального выравнивания содержимого*/
@@ -186,11 +194,18 @@ h1, h2 {
   font-size: 21px;
   color: black;
   text-align: center;
-  height: 79px;
-  line-height: 79px; /*для вертикального выравнивания содержимого*/
+  height: 70px;
+  line-height: 70px; /*для вертикального выравнивания содержимого*/
+}
+
+.page-footer::before {
+  content: '';
+  display: block;
+  height: 9px;
   background-image: url("img/color.svg");
-  background-size: auto 9px;
   background-repeat: repeat-x;
+  background-size: 178px;
+  background-position: -30px;
 }
 
 .promo .container, .page-footer p { /*для вертикального выравнивания*/
