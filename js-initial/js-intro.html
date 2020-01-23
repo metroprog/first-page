@@ -6,11 +6,16 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<button onclick="showNextPhoto()">NEXT
-	</button>
-	<button id="addButton" onclick="addNextPhoto()">
-	ADD	
-	</button>
+	<div class="buttons">
+		<button onclick="showNextPhoto()">NEXT
+		</button>
+		<button id="addButton" onclick="addNextPhoto()">
+		ADD 	
+		</button>
+		<button id="addRandomButton" onclick="addRandomPhoto()">
+		ADD RANDOM 	
+		</button>	
+	</div>
 	<div id="gallery">
 		<img id="currentPhoto" src="images/photo1.jpg" />
 	</div>

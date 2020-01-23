@@ -26,3 +26,9 @@ function addNextPhoto() {
 		button.disabled = true;
 	}
 }
+function addRandomPhoto() {
+	var newImage = document.createElement("img");
+	newImage.src = "https://picsum.photos/400/299/?" + Math.floor((Math.random()*100));
+	var containerElem = document.getElementById("gallery");
+	containerElem.appendChild(newImage);
+}
