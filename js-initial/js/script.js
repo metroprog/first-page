@@ -1,22 +1,28 @@
-var currentPhotoIndex = 1;
-var photosCount = 5;
+var images = ['photo1.jpg', 'photo2.jpg', 'photo3.jpg', 'photo4.jpg', 'photo5.jpg'];
+var currentPhotoIndex = 0;
 
 function showNextPhoto() {
 	currentPhotoIndex++;
-	if(currentPhotoIndex > photosCount) currentPhotoIndex = 1;
-	var elem = document.getElementById("currentPhoto");
-	elem.src = "images/photo" + currentPhotoIndex + ".jpg";
+	if(currentPhotoIndex >= images.length) {
+		currentPhotoIndex = 0;
+	}
+	var img = document.getElementById("currentPhoto");
+    img.src = "images/" + images[currentPhotoIndex];
 }
 function addNextPhoto() {
 	var countPagePhotos = document.getElementsByTagName("img").length;
-	if(countPagePhotos < photosCount) {
+	if(countPagePhotos < images.length) {
 		currentPhotoIndex++;
-		if(currentPhotoIndex > photosCount) currentPhotoIndex = 1;
+		if(currentPhotoIndex >= images.length) {
+			currentPhotoIndex = 0;
+		}
 		var newImage = document.createElement("img");
-		newImage.src = "images/photo" + currentPhotoIndex + ".jpg";
+		newImage.src = "images/" + images[currentPhotoIndex];
 		var containerElem = document.getElementById("gallery");
 		containerElem.appendChild(newImage);
 	} else {
-		document.getElementById("addButton").hidden = true;
+		var button = document.getElementById('addButton');
+		button.innerHTML = 'End';
+		button.disabled = true;
 	}
 }
