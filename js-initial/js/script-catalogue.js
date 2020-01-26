@@ -1,3 +1,10 @@
+var newButtonAddRandom = `
+		<button onclick="insertRandomItems(100)">Add 100 products</button>
+	`;
+var containerElem = document.querySelector(".container");
+containerElem.insertAdjacentHTML("afterbegin", newButtonAddRandom);
+
+
 function insertRandomItems(quantity) {
 	var productsList = document.querySelector('.products-list');
 	var colors = ['orange', 'yellow', 'green', 'red', 'blue', 'black', 'white'];
@@ -21,7 +28,6 @@ function insertRandomItems(quantity) {
 		productsList.insertAdjacentHTML("beforeend", productCard);
 	}	
 
-
 	var productTitles = document.querySelectorAll('h3');
 	var productImages = document.querySelectorAll('img');
 	var productPrices = document.querySelectorAll('.price');
@@ -35,7 +41,6 @@ function insertRandomItems(quantity) {
 	productColors[i].setAttribute('class', 'color-' + colors[Math.floor(Math.random() * (colors.length - 1 - 0 + 1)) + 0]); //случайное целое от min до max: Math.floor(Math.random() * (max - min + 1)) + min
 	}
 }
-insertRandomItems(5);
 
 
 
