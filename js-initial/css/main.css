@@ -1,3 +1,4 @@
+/*Стили для галереи*/
 #gallery {
 	display: flex;
 	flex-wrap: wrap;
