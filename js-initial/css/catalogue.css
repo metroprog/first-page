@@ -127,3 +127,13 @@ a {
   background-color: white;
   border: 1px solid #c0c0c0;
 }
+
+/*Стили для random 100*/
+
+.random-item h3 {
+  color: green;
+}
+
+.random-item img {
+  border: 1px solid green;
+}

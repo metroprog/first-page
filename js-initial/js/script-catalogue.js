@@ -8,8 +8,7 @@ containerElem.insertAdjacentHTML("afterbegin", newButtonAddRandom);
 function insertRandomItems(quantity) {
 	var productsList = document.querySelector('.products-list');
 	var colors = ['orange', 'yellow', 'green', 'red', 'blue', 'black', 'white'];
-
-	var productCard = `
+	var productCardTemplate = `
 		<li>
 			<a class="product-card" href="#">
 				<h3></h3>
@@ -25,21 +24,28 @@ function insertRandomItems(quantity) {
 	`;
 
 	for (var i = 1; i <= quantity; i++) {
-		productsList.insertAdjacentHTML("beforeend", productCard);
+		productsList.insertAdjacentHTML("beforeend", productCardTemplate);
 	}	
 
+	var productCards = document.querySelectorAll('.product-card');
 	var productTitles = document.querySelectorAll('h3');
 	var productImages = document.querySelectorAll('img');
 	var productPrices = document.querySelectorAll('.price');
 	var productColors = document.querySelectorAll('.colors-list li');
 	
 	for (var i = 1; i <= quantity; i++) {
-	productTitles[i].innerHTML = 'Новый товар';
-	productImages[i].src = 'https://picsum.photos/156/120/?' + Math.floor((Math.random()*100));
-	productImages[i].alt = 'Новый товар';
-	productPrices[i].innerHTML = Math.floor((Math.random()*1000)) + ' грн.';
-	productColors[i].setAttribute('class', 'color-' + colors[Math.floor(Math.random() * (colors.length - 1 - 0 + 1)) + 0]); //случайное целое от min до max: Math.floor(Math.random() * (max - min + 1)) + min
+		if (i % 2 !== 0) {
+			productCards[i].classList.add('random-item');
+		}
+		productTitles[i].innerHTML = 'Товар № ' + i;
+		productImages[i].src = 'https://picsum.photos/156/120/?' + Math.floor((Math.random()*100));
+		productImages[i].alt = 'Товар № ' + i;
+		productPrices[i].innerHTML = Math.floor((Math.random()*1000)) + ' грн.';
+		productColors[i].setAttribute('class', 'color-' + colors[Math.floor(Math.random() * (colors.length - 1 - 0 + 1)) + 0]); //случайное целое от min до max: Math.floor(Math.random() * (max - min + 1)) + min
 	}
+	var newButtonAddRandom = document.querySelector('button');
+	newButtonAddRandom.innerHTML = 'Done';
+	newButtonAddRandom.disabled = true;
 }
 
 
