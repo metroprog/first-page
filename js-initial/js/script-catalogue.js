@@ -44,8 +44,7 @@ function insertRandomItems(quantity) {
 		productColors[i].setAttribute('class', 'color-' + colors[Math.floor(Math.random() * (colors.length - 1 - 0 + 1)) + 0]); //случайное целое от min до max: Math.floor(Math.random() * (max - min + 1)) + min
 	}
 	var newButtonAddRandom = document.querySelector('button');
-	newButtonAddRandom.innerHTML = 'Done';
-	newButtonAddRandom.disabled = true;
+	newButtonAddRandom.hidden = true;
 }
 
 
