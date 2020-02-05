@@ -12,7 +12,7 @@ Painting.prototype.frameCalculation = function (baguettePrice) {
   return s;
 }
 Painting.prototype.description = function () {
-  let s = 'Написана в жанре ' + this.genre + '. Техника исполнения - ' + this.technique + '. Метки: ' + this.marks + '.';
+  let s = 'Написана в жанре ' + this.genre + '. Техника исполнения - ' + this.technique + '. Метки: ' + this.marks.join(', ') + '.';
   return s;
 }
 
