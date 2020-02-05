@@ -1,14 +1,14 @@
-var newButtonAddRandom = `
+let newButtonAddRandom = `
 		<button onclick="insertRandomItems(100)">Add 100 products</button>
 	`;
-var containerElem = document.querySelector(".container");
+let containerElem = document.querySelector(".container");
 containerElem.insertAdjacentHTML("afterbegin", newButtonAddRandom);
 
 
 function insertRandomItems(quantity) {
-	var productsList = document.querySelector('.products-list');
-	var colors = ['orange', 'yellow', 'green', 'red', 'blue', 'black', 'white'];
-	var productCardTemplate = `
+	let productsList = document.querySelector('.products-list');
+	let colors = ['orange', 'yellow', 'green', 'red', 'blue', 'black', 'white'];
+	let productCardTemplate = `
 		<li>
 			<a class="product-card" href="#">
 				<h3></h3>
@@ -23,17 +23,17 @@ function insertRandomItems(quantity) {
 		</li>
 	`;
 
-	for (var i = 1; i <= quantity; i++) {
+	for (let i = 1; i <= quantity; i++) {
 		productsList.insertAdjacentHTML("beforeend", productCardTemplate);
 	}	
 
-	var productCards = document.querySelectorAll('.product-card');
-	var productTitles = document.querySelectorAll('h3');
-	var productImages = document.querySelectorAll('img');
-	var productPrices = document.querySelectorAll('.price');
-	var productColors = document.querySelectorAll('.colors-list li');
+	let productCards = document.querySelectorAll('.product-card');
+	let productTitles = document.querySelectorAll('h3');
+	let productImages = document.querySelectorAll('img');
+	let productPrices = document.querySelectorAll('.price');
+	let productColors = document.querySelectorAll('.colors-list li');
 	
-	for (var i = 1; i <= quantity; i++) {
+	for (let i = 1; i <= quantity; i++) {
 		if (i % 2 !== 0) {
 			productCards[i].classList.add('random-item');
 		}
@@ -43,7 +43,7 @@ function insertRandomItems(quantity) {
 		productPrices[i].innerHTML = Math.floor((Math.random()*1000)) + ' грн.';
 		productColors[i].setAttribute('class', 'color-' + colors[Math.floor(Math.random() * (colors.length - 1 - 0 + 1)) + 0]); //случайное целое от min до max: Math.floor(Math.random() * (max - min + 1)) + min
 	}
-	var newButtonAddRandom = document.querySelector('button');
+	let newButtonAddRandom = document.querySelector('button');
 	newButtonAddRandom.hidden = true;
 }
 
