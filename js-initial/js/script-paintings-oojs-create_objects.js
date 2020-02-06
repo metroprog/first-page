@@ -6,42 +6,42 @@ paintingsList.push(new PaintingForOrder('Скорость', 90, 80, 'пейза�
 paintingsList.push(new Painting('Вдохновение', 100, 150, 'абстракция', 'гуашь', 2000, ['абстракция']));
 
 
-
 let productsList = document.querySelector('.products-list');
-let productCardTemplate = `
-	<li>
-		<a class="product-card" href="#">
-			<h3></h3>
-			<img width="156" height="120">
-			<p class="product-description">
-			<div class="product-options">
-				<p class='size'></p>
-				<p class='price-frame'></p>
-				<span class="price"></span>
-			</div>
-		</a>
-	</li>
-`;
 
 for (let i = 0; i < paintingsList.length; i++) {
-	productsList.insertAdjacentHTML("beforeend", productCardTemplate);
+	let li = document.createElement('li');
+	productsList.prepend(li);
+	let a = document.createElement('a');
+	a.className = 'product-card';
+	a.href = '#';
+	li.prepend(a);
+	let h3 = document.createElement('h3');
+	h3.innerHTML = paintingsList[i].name;
+	a.prepend(h3);
+	let img = document.createElement('img');
+	img.width = 156;
+	img.height = 120;
+	img.src = 'https://picsum.photos/156/120/?' + i;
+	img.alt = paintingsList[i].name;
+	a.append(img);
+	let pDescr = document.createElement('p');
+	pDescr.className = 'product-description';
+	pDescr.innerHTML = paintingsList[i].description();
+	a.append(pDescr);
+	let div = document.createElement('div');
+	div.className = 'product-options';
+	a.append(div);
+	let pSize = document.createElement('p');
+	pSize.className = 'size';
+	pSize.innerHTML = paintingsList[i].width + '&#215;' + paintingsList[i].height + ' см';
+	div.append(pSize);
+	let pFrame = document.createElement('p');
+	pFrame.className = 'price-frame';
+	pFrame.innerHTML = 'Рама - ' + paintingsList[i].frameCalculation(70) + ' грн.';
+	div.append(pFrame);
+	let span = document.createElement('span');
+	span.className = 'price';
+	span.innerHTML = paintingsList[i].price + ' грн.';
+	div.append(span);
 }	
-
-let productCards = document.querySelectorAll('.product-card');
-let productTitles = document.querySelectorAll('h3');
-let productImages = document.querySelectorAll('img');
-let productDescriptions = document.querySelectorAll('.product-description');
-let productSizes = document.querySelectorAll('.size');
-let productFramePrices = document.querySelectorAll('.price-frame');
-let productPrices = document.querySelectorAll('.price');
-
-for (let i = 0; i < paintingsList.length; i++) {
-	productTitles[i].innerHTML = paintingsList[i].name;
-	productImages[i].src = 'https://picsum.photos/156/120/?' + Math.floor((Math.random()*100));
-	productImages[i].alt = paintingsList[i].name;
-	productDescriptions[i].innerHTML = paintingsList[i].description();
-	productSizes[i].innerHTML = paintingsList[i].width + '&#215;' + paintingsList[i].height + ' см';
-	productFramePrices[i].innerHTML = 'Рама - ' + paintingsList[i].frameCalculation(70) + ' грн.';    // 70 - цена 1 м багета
-	productPrices[i].innerHTML = paintingsList[i].price + ' грн.';
-}
 
